@@ -5,200 +5,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>软件下载中心</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         .download-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-        .progress-bar {
-            transition: width 0.3s ease;
-        }
-        .software-card:hover {
-            transform: scale(1.03);
+        .platform-card:hover {
+            border-color: #3b82f6;
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-6 shadow-lg">
-        <div class="container mx-auto px-4">
-            <h1 class="text-3xl font-bold">软件下载中心</h1>
-            <p class="mt-2">安全可靠的软件资源平台</p>
-        </div>
-    </header>
+<body class="bg-gray-50">
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-blue-600 mb-4">软件下载中心</h1>
+            <p class="text-gray-600 text-lg">最新版本 v2.5.0 | 更新日期: 2025-09-01</p>
+        </header>
 
-    <main class="container mx-auto px-4 py-8">
-        <section class="mb-12">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-2xl font-semibold text-gray-800">热门下载</h2>
-                <div class="relative">
-                    <input type="text" placeholder="搜索软件..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
-                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="software-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300">
-                    <img src="https://picsum.photos/600/400?random=1" alt="办公软件套装预览图" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">办公软件套装 v3.2</h3>
-                        <div class="flex items-center text-gray-500 mb-4">
-                            <span class="mr-4"><i class="fas fa-file-archive mr-1"></i> 85.6 MB</span>
-                            <span><i class="fas fa-download mr-1"></i> 12,456</span>
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+            <div class="p-8">
+                <div class="flex flex-col md:flex-row items-center mb-8">
+                    <img src="https://picsum.photos/150/150?random=1" alt="软件图标" class="w-24 h-24 rounded-lg mr-6 mb-4 md:mb-0">
+                    <div>
+                        <h2 class="text-2xl font-semibold text-gray-800">专业版工具套件</h2>
+                        <p class="text-gray-600 mt-2">跨平台生产力工具，支持Windows/macOS/Linux系统</p>
+                        <div class="flex items-center mt-3">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">最新版本</span>
+                            <span class="ml-3 text-sm text-gray-500">文件大小: 85.6 MB</span>
                         </div>
-                        <p class="text-gray-600 mb-4">专业的办公解决方案，包含文字处理、表格计算和演示文稿功能。</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Windows</span>
-                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">64位</span>
-                            </div>
-                            <button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('office_suite_v3.2.zip')">
-                                <i class="fas fa-download mr-2"></i>下载
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="platform-card border rounded-lg p-6 transition-all duration-300">
+                        <div class="text-center">
+                            <i class="fab fa-windows text-blue-500 text-4xl mb-3"></i>
+                            <h3 class="font-medium text-lg mb-2">Windows</h3>
+                            <p class="text-gray-500 text-sm mb-4">支持Win10/11系统</p>
+                            <button onclick="downloadFile('windows')" class="download-btn w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-all duration-300">
+                                下载 (64-bit)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="platform-card border rounded-lg p-6 transition-all duration-300">
+                        <div class="text-center">
+                            <i class="fab fa-apple text-gray-700 text-4xl mb-3"></i>
+                            <h3 class="font-medium text-lg mb-2">macOS</h3>
+                            <p class="text-gray-500 text-sm mb-4">支持M1/M2芯片</p>
+                            <button onclick="downloadFile('macos')" class="download-btn w-full bg-gray-700 hover:bg-gray-800 text-white py-2 px-4 rounded-lg transition-all duration-300">
+                                下载 (Universal)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="platform-card border rounded-lg p-6 transition-all duration-300">
+                        <div class="text-center">
+                            <i class="fab fa-linux text-orange-500 text-4xl mb-3"></i>
+                            <h3 class="font-medium text-lg mb-2">Linux</h3>
+                            <p class="text-gray-500 text-sm mb-4">Debian/Ubuntu/RHEL</p>
+                            <button onclick="downloadFile('linux')" class="download-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-lg transition-all duration-300">
+                                下载 (.deb/.rpm)
                             </button>
                         </div>
                     </div>
                 </div>
 
-                <div class="software-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300">
-                    <img src="https://picsum.photos/600/400?random=2" alt="图像编辑工具预览图" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">图像编辑工具 v2.1</h3>
-                        <div class="flex items-center text-gray-500 mb-4">
-                            <span class="mr-4"><i class="fas fa-file-archive mr-1"></i> 152.3 MB</span>
-                            <span><i class="fas fa-download mr-1"></i> 8,742</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">强大的图像处理软件，支持多种格式和高级编辑功能。</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Windows</span>
-                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Mac</span>
-                            </div>
-                            <button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('image_editor_v2.1.dmg')">
-                                <i class="fas fa-download mr-2"></i>下载
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="software-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300">
-                    <img src="https://picsum.photos/600/400?random=3" alt="系统优化工具预览图" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold mb-2">系统优化工具 v1.5</h3>
-                        <div class="flex items-center text-gray-500 mb-4">
-                            <span class="mr-4"><i class="fas fa-file-archive mr-1"></i> 45.8 MB</span>
-                            <span><i class="fas fa-download mr-1"></i> 15,329</span>
-                        </div>
-                        <p class="text-gray-600 mb-4">一键优化系统性能，清理垃圾文件，提升电脑运行速度。</p>
-                        <div class="flex justify-between items-center">
-                            <div class="flex space-x-2">
-                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Windows</span>
-                            </div>
-                            <button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('system_optimizer_v1.5.exe')">
-                                <i class="fas fa-download mr-2"></i>下载
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mb-12">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">下载进度</h2>
-            <div id="download-progress" class="hidden bg-white rounded-xl shadow-md p-6">
-                <h3 id="downloading-file" class="text-lg font-medium mb-4">正在下载: <span class="text-blue-600"></span></h3>
-                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
-                    <div id="progress-bar" class="progress-bar bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
-                </div>
-                <div class="flex justify-between text-sm text-gray-600">
-                    <span id="progress-percent">0%</span>
-                    <span id="download-speed">0 KB/s</span>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2 class="text-2xl font-semibold text-gray-800 mb-6">下载说明</h2>
-            <div class="bg-white rounded-xl shadow-md p-6">
-                <div class="prose max-w-none">
-                    <h3 class="text-lg font-medium mb-2">安装指南</h3>
-                    <ul class="list-disc pl-5 space-y-1 mb-4">
-                        <li>点击下载按钮获取软件安装包</li>
-                        <li>运行下载的安装程序并按照提示操作</li>
-                        <li>安装完成后即可使用软件</li>
-                    </ul>
-                    <h3 class="text-lg font-medium mb-2">注意事项</h3>
-                    <ul class="list-disc pl-5 space-y-1">
-                        <li>请确保您的系统满足软件最低要求</li>
-                        <li>下载前请关闭杀毒软件以避免误报</li>
-                        <li>建议在稳定的网络环境下下载大文件</li>
+                <div class="bg-blue-50 rounded-lg p-6">
+                    <h3 class="font-medium text-lg mb-3 text-blue-700">安装说明</h3>
+                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
+                        <li>下载完成后双击安装包运行安装程序</li>
+                        <li>确保系统满足最低配置要求</li>
+                        <li>安装过程可能需要管理员权限</li>
+                        <li>遇到问题请查看<a href="#faq" class="text-blue-600 hover:underline">常见问题</a></li>
                     </ul>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
 
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between">
-                <div class="mb-6 md:mb-0">
-                    <h3 class="text-xl font-bold mb-4">软件下载中心</h3>
-                    <p class="text-gray-400">提供安全可靠的软件资源下载服务</p>
-                </div>
-                <div class="grid grid-cols-2 gap-8">
+        <div id="faq" class="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div class="p-8">
+                <h2 class="text-2xl font-semibold text-gray-800 mb-6">常见问题</h2>
+                <div class="space-y-4">
                     <div>
-                        <h4 class="text-lg font-semibold mb-3">快速链接</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">首页</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">热门下载</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">最新发布</a></li>
-                        </ul>
+                        <h3 class="font-medium text-lg text-gray-700">下载速度慢怎么办？</h3>
+                        <p class="text-gray-600 mt-1">建议更换网络环境或使用下载工具，也可以尝试<a href="#" class="text-blue-600 hover:underline">镜像下载地址</a></p>
                     </div>
                     <div>
-                        <h4 class="text-lg font-semibold mb-3">联系我们</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">客服支持</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">反馈建议</a></li>
-                            <li><a href="#" class="text-gray-400 hover:text-white transition">关于我们</a></li>
-                        </ul>
+                        <h3 class="font-medium text-lg text-gray-700">软件是否收费？</h3>
+                        <p class="text-gray-600 mt-1">基础功能免费使用，高级功能需要订阅专业版</p>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-lg text-gray-700">如何卸载软件？</h3>
+                        <p class="text-gray-600 mt-1">通过系统控制面板或应用程序文件夹中的卸载程序</p>
                     </div>
                 </div>
-            </div>
-            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
-                <p>© 2025 软件下载中心. 保留所有权利.</p>
             </div>
         </div>
-    </footer>
+    </div>
 
     <script>
-        function startDownload(filename) {
-            document.getElementById('downloading-file').innerHTML = '正在下载: ' + filename;
-            document.getElementById('download-progress').classList.remove('hidden');
+        function downloadFile(platform) {
+            let url = '';
+            switch(platform) {
+                case 'windows':
+                    url = 'https://example.com/downloads/project_windows_v2.5.0.exe';
+                    break;
+                case 'macos':
+                    url = 'https://example.com/downloads/project_macos_v2.5.0.dmg';
+                    break;
+                case 'linux':
+                    url = 'https://example.com/downloads/project_linux_v2.5.0.deb';
+                    break;
+            }
             
-            let progress = 0;
-            const progressBar = document.getElementById('progress-bar');
-            const progressPercent = document.getElementById('progress-percent');
-            const downloadSpeed = document.getElementById('download-speed');
-            
-            const interval = setInterval(() => {
-                progress += Math.random() * 10;
-                if (progress > 100) progress = 100;
-                
-                progressBar.style.width = progress + '%';
-                progressPercent.textContent = Math.floor(progress) + '%';
-                
-                const speed = Math.floor(Math.random() * 2000) + 500;
-                downloadSpeed.textContent = (speed / 1024).toFixed(1) + ' MB/s';
-                
-                if (progress === 100) {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        alert('下载完成: ' + filename);
-                        document.getElementById('download-progress').classList.add('hidden');
-                        progressBar.style.width = '0%';
-                    }, 500);
-                }
-            }, 200);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = true;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
         }
     </script>
 </body>
