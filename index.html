@@ -60,6 +60,7 @@
                     </div>
                 </div>
 
+
                 <div class="software-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300">
                     <img src="https://picsum.photos/600/400?random=2" alt="图像编辑工具预览图" class="w-full h-48 object-cover">
                     <div class="p-6">
@@ -68,15 +69,19 @@
                             <span class="mr-4"><i class="fas fa-file-archive mr-1"></i> 152.3 MB</span>
                             <span><i class="fas fa-download mr-1"></i> 8,742</span>
                         </div>
+
+
                         <p class="text-gray-600 mb-4">强大的图像处理软件，支持多种格式和高级编辑功能。</p>
                         <div class="flex justify-between items-center">
                             <div class="flex space-x-2">
                                 <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Windows</span>
                                 <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Mac</span>
                             </div>
-                            <button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('image_editor_v2.1.dmg')">
-                                <i class="fas fa-download mr-2"></i>下载
-                            </button>
+				<button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('system_optimizer_v1.5.exe')">
+                               <i class="fas fa-download mr-2"></i>
+                           <a rel="nofollow" href="https://www.onlinedown.net/iopdfbhjl/30735?module=download&amp;
+				t=website&amp;v=20250902184552" target="_self" class="qrcode_show rest" onclick="_hmt.push(['_trackEvent','down','down','down_30735']);_xzt.push(['onclick_13','617-2-41',30735,'local', 1,1]);" style="font-weight:bold"><span class="tubiao"></span>下载</a>
+				</button>	
                         </div>
                     </div>
                 </div>
@@ -170,36 +175,6 @@
         </div>
     </footer>
 
-    <script>
-        function startDownload(filename) {
-            document.getElementById('downloading-file').innerHTML = '正在下载: ' + filename;
-            document.getElementById('download-progress').classList.remove('hidden');
-            
-            let progress = 0;
-            const progressBar = document.getElementById('progress-bar');
-            const progressPercent = document.getElementById('progress-percent');
-            const downloadSpeed = document.getElementById('download-speed');
-            
-            const interval = setInterval(() => {
-                progress += Math.random() * 10;
-                if (progress > 100) progress = 100;
-                
-                progressBar.style.width = progress + '%';
-                progressPercent.textContent = Math.floor(progress) + '%';
-                
-                const speed = Math.floor(Math.random() * 2000) + 500;
-                downloadSpeed.textContent = (speed / 1024).toFixed(1) + ' MB/s';
-                
-                if (progress === 100) {
-                    clearInterval(interval);
-                    setTimeout(() => {
-                        alert('下载完成: ' + filename);
-                        document.getElementById('download-progress').classList.add('hidden');
-                        progressBar.style.width = '0%';
-                    }, 500);
-                }
-            }, 200);
-        }
-    </script>
+    
 </body>
 </html>
