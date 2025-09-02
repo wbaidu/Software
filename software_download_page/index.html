@@ -1,131 +1,89 @@
-
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>软件下载中心</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        .download-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
-        .platform-card:hover {
-            border-color: #3b82f6;
-        }
-    </style>
+    <title>个人介绍</title>
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
-<body class="bg-gray-50">
-    <div class="container mx-auto px-4 py-12 max-w-4xl">
-        <header class="text-center mb-12">
-            <h1 class="text-4xl font-bold text-blue-600 mb-4">软件下载中心</h1>
-            <p class="text-gray-600 text-lg">最新版本 v2.5.0 | 更新日期: 2025-09-01</p>
-        </header>
 
-        <div class="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-            <div class="p-8">
-                <div class="flex flex-col md:flex-row items-center mb-8">
-                    <img src="https://picsum.photos/150/150?random=1" alt="软件图标" class="w-24 h-24 rounded-lg mr-6 mb-4 md:mb-0">
-                    <div>
-                        <h2 class="text-2xl font-semibold text-gray-800">专业版工具套件</h2>
-                        <p class="text-gray-600 mt-2">跨平台生产力工具，支持Windows/macOS/Linux系统</p>
-                        <div class="flex items-center mt-3">
-                            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">最新版本</span>
-                            <span class="ml-3 text-sm text-gray-500">文件大小: 85.6 MB</span>
-                        </div>
-                    </div>
+<body>
+    <div id="bigbox">
+        <div id="banner">
+            <img src="picture/banner.png" alt="">
+        </div>
+        <nav>
+            <a class="dangqian" href="">首页</a>
+            <a href="duanwen.html">短文</a>
+            <a href="rizhi.html">日志</a>
+            <a href="liuyan.html">留言板</a>
+        </nav>
+        <div id="main">
+            <div id="main_left">
+                <h2>关于我</h2>
+                <img src="picture/me.png" alt="">
+                <p>
+                    <span>姓名</span>:*****<br>
+                    <span>性别</span>:男<br>
+                    <span>爱好</span>:听歌 踢足球 打游戏<br>
+                    <span>性格</span> :开朗<br>
+                    <span>家乡</span>:新疆乌恰县<br>
+                    <span>专业</span>:计算机网络技术
+                </p>
+            </div>
+            <div id="main_right">
+                <h2>热爱生活</h2>
+                <p>
+                    一、岁月从来不曾静好，只是有人在替你背负枷锁，含泪前行。也许是父母，也许是朋友，也许是陌生人……无论是谁，请记得常怀感恩之心。
+                </p>
+                <p>
+                    二、这个世界并不完美，甚至有点残酷。你无法决定下一段旅途遇见的是好事还是坏事，可你能决定面对它们的态度。你看这个世界的角度，决定了这个世界给你的温度。
+                </p>
+                <p>
+                    三、总会有一件事让你瞬间长大，也总会有一个人让你泪如雨下。愿你早日领教这个世界的深深恶意，让自己活得开心得意。
+                </p>
+                <p>
+                    四、想要与众不同，却总随遇而安，想要做很多未做的事，却在现实棘手的吃喝拉撒前低下了头，我们间歇性热血满腔，长时间迷茫犯懒，别等了，再努力试试看！
+                </p>
+                <img src="picture/life.png" alt="">
+            </div>
+        </div>
+        <div id="luxing">
+            <h2>旅行生活</h2>
+            <div>
+                <div id="picture">
+                    <img src="picture/11.png" alt="">
+                    <p>在日月潭</p>
                 </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                    <div class="platform-card border rounded-lg p-6 transition-all duration-300">
-                        <div class="text-center">
-                            <i class="fab fa-windows text-blue-500 text-4xl mb-3"></i>
-                            <h3 class="font-medium text-lg mb-2">Windows</h3>
-                            <p class="text-gray-500 text-sm mb-4">支持Win10/11系统</p>
-                            <button onclick="downloadFile('windows')" class="download-btn w-full bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg transition-all duration-300">
-                                下载 (64-bit)
-                            </button>
-                        </div>
-                    </div>
-                    <div class="platform-card border rounded-lg p-6 transition-all duration-300">
-                        <div class="text-center">
-                            <i class="fab fa-apple text-gray-700 text-4xl mb-3"></i>
-                            <h3 class="font-medium text-lg mb-2">macOS</h3>
-                            <p class="text-gray-500 text-sm mb-4">支持M1/M2芯片</p>
-                            <button onclick="downloadFile('macos')" class="download-btn w-full bg-gray-700 hover:bg-gray-800 text-white py-2 px-4 rounded-lg transition-all duration-300">
-                                下载 (Universal)
-                            </button>
-                        </div>
-                    </div>
-                    <div class="platform-card border rounded-lg p-6 transition-all duration-300">
-                        <div class="text-center">
-                            <i class="fab fa-linux text-orange-500 text-4xl mb-3"></i>
-                            <h3 class="font-medium text-lg mb-2">Linux</h3>
-                            <p class="text-gray-500 text-sm mb-4">Debian/Ubuntu/RHEL</p>
-                            <button onclick="downloadFile('linux')" class="download-btn w-full bg-orange-500 hover:bg-orange-600 text-white py-2 px-4 rounded-lg transition-all duration-300">
-                                下载 (.deb/.rpm)
-                            </button>
-                        </div>
-                    </div>
+                <div id="picture">
+                    <img src="picture/22.png" alt="">
+                    <p>
+                        在毛里求斯
+                    </p>
                 </div>
-
-                <div class="bg-blue-50 rounded-lg p-6">
-                    <h3 class="font-medium text-lg mb-3 text-blue-700">安装说明</h3>
-                    <ul class="list-disc pl-5 text-gray-700 space-y-2">
-                        <li>下载完成后双击安装包运行安装程序</li>
-                        <li>确保系统满足最低配置要求</li>
-                        <li>安装过程可能需要管理员权限</li>
-                        <li>遇到问题请查看<a href="#faq" class="text-blue-600 hover:underline">常见问题</a></li>
-                    </ul>
+                <div id="picture">
+                    <img src="picture/33.png" alt="">
+                    <p>
+                        在马尔代夫
+                    </p>
+                </div>
+                <div id="picture">
+                    <img src="picture/44.png" alt="">
+                    <p>
+                        在玉龙雪山
+                    </p>
                 </div>
             </div>
         </div>
-
-        <div id="faq" class="bg-white rounded-xl shadow-lg overflow-hidden">
-            <div class="p-8">
-                <h2 class="text-2xl font-semibold text-gray-800 mb-6">常见问题</h2>
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="font-medium text-lg text-gray-700">下载速度慢怎么办？</h3>
-                        <p class="text-gray-600 mt-1">建议更换网络环境或使用下载工具，也可以尝试<a href="#" class="text-blue-600 hover:underline">镜像下载地址</a></p>
-                    </div>
-                    <div>
-                        <h3 class="font-medium text-lg text-gray-700">软件是否收费？</h3>
-                        <p class="text-gray-600 mt-1">基础功能免费使用，高级功能需要订阅专业版</p>
-                    </div>
-                    <div>
-                        <h3 class="font-medium text-lg text-gray-700">如何卸载软件？</h3>
-                        <p class="text-gray-600 mt-1">通过系统控制面板或应用程序文件夹中的卸载程序</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <footer>
+            <p>
+                版权所有©*****
+            </p>
+        </footer>
     </div>
-
-    <script>
-        function downloadFile(platform) {
-            let url = '';
-            switch(platform) {
-                case 'windows':
-                    url = 'https://example.com/downloads/project_windows_v2.5.0.exe';
-                    break;
-                case 'macos':
-                    url = 'https://example.com/downloads/project_macos_v2.5.0.dmg';
-                    break;
-                case 'linux':
-                    url = 'https://example.com/downloads/project_linux_v2.5.0.deb';
-                    break;
-            }
-            
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = true;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-    </script>
 </body>
+
 </html>
