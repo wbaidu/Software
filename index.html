@@ -1,89 +1,205 @@
-<!DOCTYPE html>
-<html lang="en">
 
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人介绍</title>
-    <link rel="stylesheet" href="css/style.css">
-
+    <title>软件下载中心</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .progress-bar {
+            transition: width 0.3s ease;
+        }
+        .software-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
 </head>
+<body class="bg-gray-100">
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-800 text-white py-6 shadow-lg">
+        <div class="container mx-auto px-4">
+            <h1 class="text-3xl font-bold">软件下载中心</h1>
+            <p class="mt-2">安全可靠的软件资源平台</p>
+        </div>
+    </header>
 
-<body>
-    <div id="bigbox">
-        <div id="banner">
-            <img src="picture/banner.png" alt="">
-        </div>
-        <nav>
-            <a class="dangqian" href="">首页</a>
-            <a href="duanwen.html">短文</a>
-            <a href="rizhi.html">日志</a>
-            <a href="liuyan.html">留言板</a>
-        </nav>
-        <div id="main">
-            <div id="main_left">
-                <h2>关于我</h2>
-                <img src="picture/me.png" alt="">
-                <p>
-                    <span>姓名</span>:*****<br>
-                    <span>性别</span>:男<br>
-                    <span>爱好</span>:听歌 踢足球 打游戏<br>
-                    <span>性格</span> :开朗<br>
-                    <span>家乡</span>:新疆乌恰县<br>
-                    <span>专业</span>:计算机网络技术
-                </p>
-            </div>
-            <div id="main_right">
-                <h2>热爱生活</h2>
-                <p>
-                    一、岁月从来不曾静好，只是有人在替你背负枷锁，含泪前行。也许是父母，也许是朋友，也许是陌生人……无论是谁，请记得常怀感恩之心。
-                </p>
-                <p>
-                    二、这个世界并不完美，甚至有点残酷。你无法决定下一段旅途遇见的是好事还是坏事，可你能决定面对它们的态度。你看这个世界的角度，决定了这个世界给你的温度。
-                </p>
-                <p>
-                    三、总会有一件事让你瞬间长大，也总会有一个人让你泪如雨下。愿你早日领教这个世界的深深恶意，让自己活得开心得意。
-                </p>
-                <p>
-                    四、想要与众不同，却总随遇而安，想要做很多未做的事，却在现实棘手的吃喝拉撒前低下了头，我们间歇性热血满腔，长时间迷茫犯懒，别等了，再努力试试看！
-                </p>
-                <img src="picture/life.png" alt="">
-            </div>
-        </div>
-        <div id="luxing">
-            <h2>旅行生活</h2>
-            <div>
-                <div id="picture">
-                    <img src="picture/11.png" alt="">
-                    <p>在日月潭</p>
-                </div>
-                <div id="picture">
-                    <img src="picture/22.png" alt="">
-                    <p>
-                        在毛里求斯
-                    </p>
-                </div>
-                <div id="picture">
-                    <img src="picture/33.png" alt="">
-                    <p>
-                        在马尔代夫
-                    </p>
-                </div>
-                <div id="picture">
-                    <img src="picture/44.png" alt="">
-                    <p>
-                        在玉龙雪山
-                    </p>
+    <main class="container mx-auto px-4 py-8">
+        <section class="mb-12">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-gray-800">热门下载</h2>
+                <div class="relative">
+                    <input type="text" placeholder="搜索软件..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
                 </div>
             </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="software-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300">
+                    <img src="https://picsum.photos/600/400?random=1" alt="办公软件套装预览图" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">办公软件套装 v3.2</h3>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <span class="mr-4"><i class="fas fa-file-archive mr-1"></i> 85.6 MB</span>
+                            <span><i class="fas fa-download mr-1"></i> 12,456</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">专业的办公解决方案，包含文字处理、表格计算和演示文稿功能。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Windows</span>
+                                <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">64位</span>
+                            </div>
+                            <button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('office_suite_v3.2.zip')">
+                                <i class="fas fa-download mr-2"></i>下载
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="software-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300">
+                    <img src="https://picsum.photos/600/400?random=2" alt="图像编辑工具预览图" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">图像编辑工具 v2.1</h3>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <span class="mr-4"><i class="fas fa-file-archive mr-1"></i> 152.3 MB</span>
+                            <span><i class="fas fa-download mr-1"></i> 8,742</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">强大的图像处理软件，支持多种格式和高级编辑功能。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Windows</span>
+                                <span class="bg-purple-100 text-purple-800 text-xs px-2 py-1 rounded">Mac</span>
+                            </div>
+                            <button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('image_editor_v2.1.dmg')">
+                                <i class="fas fa-download mr-2"></i>下载
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="software-card bg-white rounded-xl shadow-md overflow-hidden transition-transform duration-300">
+                    <img src="https://picsum.photos/600/400?random=3" alt="系统优化工具预览图" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">系统优化工具 v1.5</h3>
+                        <div class="flex items-center text-gray-500 mb-4">
+                            <span class="mr-4"><i class="fas fa-file-archive mr-1"></i> 45.8 MB</span>
+                            <span><i class="fas fa-download mr-1"></i> 15,329</span>
+                        </div>
+                        <p class="text-gray-600 mb-4">一键优化系统性能，清理垃圾文件，提升电脑运行速度。</p>
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <span class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded">Windows</span>
+                            </div>
+                            <button class="download-btn bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300" onclick="startDownload('system_optimizer_v1.5.exe')">
+                                <i class="fas fa-download mr-2"></i>下载
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">下载进度</h2>
+            <div id="download-progress" class="hidden bg-white rounded-xl shadow-md p-6">
+                <h3 id="downloading-file" class="text-lg font-medium mb-4">正在下载: <span class="text-blue-600"></span></h3>
+                <div class="w-full bg-gray-200 rounded-full h-2.5 mb-2">
+                    <div id="progress-bar" class="progress-bar bg-blue-600 h-2.5 rounded-full" style="width: 0%"></div>
+                </div>
+                <div class="flex justify-between text-sm text-gray-600">
+                    <span id="progress-percent">0%</span>
+                    <span id="download-speed">0 KB/s</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-6">下载说明</h2>
+            <div class="bg-white rounded-xl shadow-md p-6">
+                <div class="prose max-w-none">
+                    <h3 class="text-lg font-medium mb-2">安装指南</h3>
+                    <ul class="list-disc pl-5 space-y-1 mb-4">
+                        <li>点击下载按钮获取软件安装包</li>
+                        <li>运行下载的安装程序并按照提示操作</li>
+                        <li>安装完成后即可使用软件</li>
+                    </ul>
+                    <h3 class="text-lg font-medium mb-2">注意事项</h3>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li>请确保您的系统满足软件最低要求</li>
+                        <li>下载前请关闭杀毒软件以避免误报</li>
+                        <li>建议在稳定的网络环境下下载大文件</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">软件下载中心</h3>
+                    <p class="text-gray-400">提供安全可靠的软件资源下载服务</p>
+                </div>
+                <div class="grid grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">快速链接</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">首页</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">热门下载</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">最新发布</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3">联系我们</h4>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">客服支持</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">反馈建议</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">关于我们</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-6 text-center text-gray-400">
+                <p>© 2025 软件下载中心. 保留所有权利.</p>
+            </div>
         </div>
-        <footer>
-            <p>
-                版权所有©*****
-            </p>
-        </footer>
-    </div>
+    </footer>
+
+    <script>
+        function startDownload(filename) {
+            document.getElementById('downloading-file').innerHTML = '正在下载: ' + filename;
+            document.getElementById('download-progress').classList.remove('hidden');
+            
+            let progress = 0;
+            const progressBar = document.getElementById('progress-bar');
+            const progressPercent = document.getElementById('progress-percent');
+            const downloadSpeed = document.getElementById('download-speed');
+            
+            const interval = setInterval(() => {
+                progress += Math.random() * 10;
+                if (progress > 100) progress = 100;
+                
+                progressBar.style.width = progress + '%';
+                progressPercent.textContent = Math.floor(progress) + '%';
+                
+                const speed = Math.floor(Math.random() * 2000) + 500;
+                downloadSpeed.textContent = (speed / 1024).toFixed(1) + ' MB/s';
+                
+                if (progress === 100) {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        alert('下载完成: ' + filename);
+                        document.getElementById('download-progress').classList.add('hidden');
+                        progressBar.style.width = '0%';
+                    }, 500);
+                }
+            }, 200);
+        }
+    </script>
 </body>
-
 </html>
