@@ -1,0 +1,22 @@
+
+/* 自定义样式补充 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.software-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.download-btn {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .grid-cols-3 {
+        grid-template-columns: 1fr;
+    }
+}
